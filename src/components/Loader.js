@@ -35,5 +35,10 @@ const Wrapper = styled.div`
     transform: translateY(-50%);
     left: 45%;
     transform: translateY(-50%);
+
+    @media(max-width: 500px) {
+      left: 0;
+      width: 100%;
+    }
   }
 ` 

@@ -87,31 +87,31 @@ function Chat(props) {
       </div>
 
       <div className="input-container">
-          <div className="left-side">
-            <img className="selectimg-icon" src={selectimgIcon} alt="" />
-            <form onSubmit={(e) => addMessageHandler(e)} action="">
-              <input
-                onChange={() => setToggleIcon(false)}
-                ref={addedMessage}
-                type="text"
-                placeholder="Write a message..."
-              />
-            </form>
-          </div>
+        <div className="left-side">
+          <img className="selectimg-icon" src={selectimgIcon} alt="" />
+          <form onSubmit={(e) => addMessageHandler(e)} action="">
+            <input
+              onChange={() => setToggleIcon(false)}
+              ref={addedMessage}
+              type="text"
+              placeholder="Write a message..."
+            />
+          </form>
+        </div>
 
-          <div className="icons-container">
-            <img className="emoji-icon" src={emojiIcon} alt="" />
-            {toggleIcon ? (
-              <img className="voice-icon" src={voiceIcon} alt="" />
-            ) : (
-              <img
-                className="send-icon"
-                src={sendIcon}
-                alt=""
-                onClick={addMessageHandler}
-              />
-            )}
-          </div>
+        <div className="icons-container">
+          <img className="emoji-icon" src={emojiIcon} alt="" />
+          {toggleIcon ? (
+            <img className="voice-icon" src={voiceIcon} alt="" />
+          ) : (
+            <img
+              className="send-icon"
+              src={sendIcon}
+              alt=""
+              onClick={addMessageHandler}
+            />
+          )}
+        </div>
       </div>
     </Wrapper>
   );
@@ -157,7 +157,7 @@ const Wrapper = styled.div`
       align-items: center;
       gap: 10px;
 
-      @media(max-width: 500px) {
+      @media (max-width: 500px) {
         display: none;
       }
 
@@ -185,7 +185,7 @@ const Wrapper = styled.div`
       width: 10px;
     }
     ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 3px grey; 
+      box-shadow: inset 0 0 3px grey;
       border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
@@ -194,15 +194,21 @@ const Wrapper = styled.div`
     }
 
     .message {
-      padding: 10px;
+      padding: 5px 10px 4px 10px;
       border-radius: 4px 14px 14px 14px;
       background-color: #213040;
       color: white;
       margin-bottom: 7px;
-      width: 60%;
+      width: fit-content;
 
-      @media(max-width: 500px) {
-        width: 100%;
+      
+      .message-text {
+        margin-right: 90px;
+
+
+        @media (max-width: 500px) {
+            margin-right: 20px;
+        }
       }
 
       .createdby {
@@ -238,39 +244,38 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-      .left-side {
-        display: flex;
-        align-items: center;
-      }
-      
-      input {
-        width: 100%; 
-        height: 50px;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        color: white;
-        font-size: 14px;
-        letter-spacing: 1px;
-      }
-
-      .selectimg-icon {
-        margin-right: 20px;
-        cursor: pointer;
-      }
-
-      .send-icon {
-        cursor: pointer;
-      }
-
-      .emoji-icon {
-        margin-right: 20px;
-        cursor: pointer;
-      }
-
-      .voice-icon {
-        cursor: pointer;
-      }
+    .left-side {
+      display: flex;
+      align-items: center;
     }
-  
+
+    input {
+      width: 100%;
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .selectimg-icon {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .send-icon {
+      cursor: pointer;
+    }
+
+    .emoji-icon {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .voice-icon {
+      cursor: pointer;
+    }
+  }
 `;

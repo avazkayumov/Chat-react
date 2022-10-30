@@ -38,7 +38,7 @@ const chatSlice = createSlice({
       localStorage.setItem("token", action.payload.data.token)
    })
   }
-})
+})  
 
 export const { logout } = chatSlice.actions 
 

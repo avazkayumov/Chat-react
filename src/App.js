@@ -3,7 +3,6 @@ import Signup from "./pages/Signup";
 import { Routes, Route } from "react-router-dom"
 import Signin from "./pages/Signin";
 import PrivateRoute from "./components/PrivateRoute";
-import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
   return (
