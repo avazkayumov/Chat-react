@@ -6,7 +6,7 @@ const initialState = {
     messages: [],
     token: localStorage.getItem("token"),
     auth: Boolean(localStorage.getItem("token")),
-    username: localStorage.getItem("username")
+    username: localStorage.getItem("username"),
 }
 
 const chatSlice = createSlice({

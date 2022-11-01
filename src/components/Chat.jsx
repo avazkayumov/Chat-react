@@ -26,7 +26,7 @@ function Chat(props) {
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(fetchMessages());
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [dispatch]);
 
@@ -140,6 +140,7 @@ const Wrapper = styled.div`
 
       .arrowback-icon {
         cursor: pointer;
+        user-select: none;
       }
 
       h3 {

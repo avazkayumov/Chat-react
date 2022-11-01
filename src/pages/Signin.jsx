@@ -4,6 +4,7 @@ import { TextField, Button } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { signin } from '../store/actions'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Signin() {
   const usernameRef = useRef()
@@ -17,7 +18,7 @@ function Signin() {
       password: passwordRef.current.value
     }
 
-    dispatch(signin(data)).then(() => navigate("/"))
+    dispatch(signin(data)).then((res) => Boolean(res.payload.data.token) ? navigate('/') : toast.error("User not found"))
   }
 
   return (

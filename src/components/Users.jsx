@@ -12,7 +12,7 @@ function Users(props) {
   const [toggleAside, setToggleAside] = useState(true)
   const { username } = useSelector(store => store)
   const dispatch = useDispatch()
-  const messages = useSelector(store => store.messages.data)
+  const messages = useSelector((store) => store.messages.data)
 
   function toggleAsideFunc() {
     setToggleAside(!toggleAside)
